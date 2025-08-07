@@ -1,61 +1,81 @@
-🧠 Disease Prediction from Symptoms
-This project is a machine learning-based system that predicts the most likely disease based on user-input symptoms. It uses classification algorithms to analyze symptom patterns and provide a probable diagnosis.
+# Disease Prediction from Symptoms
 
-🚀 Features
-Predicts disease based on multiple symptoms.
+This project explores the use of machine learning algorithms to predict diseases from symptoms. 
 
-Trained on a structured dataset containing symptoms and diseases.
+### Algorithms Explored
 
-Easy-to-use command-line interface.
+The following algorithms have been explored in code:
 
-Uses machine learning classifiers like Decision Tree, Random Forest, etc.
+1. Naive Bayes
+2. Decision Tree
+3. Random Forest
+4. Gradient Boosting
 
-🧰 Requirements
-Make sure the following are installed:
+# Dataset
 
-bash
-Copy
-Edit
-Python 3.x
-pandas
-numpy
-scikit-learn
-You can install dependencies using:
+### Source-1
 
-bash
-Copy
-Edit
+The dataset for this problem used with the `main.py` script is downloaded from here:
+
+```
+https://www.kaggle.com/kaushil268/disease-prediction-using-machine-learning
+```
+
+This dataset has 133 total columns, 132 of them being symptoms experienced by patiend and last column in prognosis for the same.
+
+### Source-2
+The dataset for this problem used with the Jupyter notebook is downloaded from here: 
+```
+https://impact.dbmi.columbia.edu/~friedma/Projects/DiseaseSymptomKB/index.html
+```
+
+This dataset has 3 columns:
+```
+Disease  | Count of Disease Occurrence | Symptom
+```
+
+You can either copy paste the whole table from here to an excel sheet or scrape it out using Beautifulsoup.
+
+# Directory Structure
+
+```
+|_ dataset/
+         |_ training_data.csv
+         |_ test_data.csv
+
+|_ saved_model/
+         |_ [ pre-trained models ]
+
+|_ main.py [ code for laoding kaggle dataset, training & saving the model]
+
+|_ notebook/
+         |_ dataset/
+                  |_ raw_data.xlsx [Columbia dataset for notebook]
+         |_ Disease-Prediction-from-Symptoms-checkpoint.ipynb [ IPython Notebook for loading Columbia dataset, training model and Inference ]
+```
+
+# Usage
+
+Please make sure to install all dependencies before running the demo, using the following:
+
+```
 pip install -r requirements.txt
-📁 Project Structure
-csharp
-Copy
-Edit
-Disease-Prediction-from-Symptoms/
-│
-├── disease_prediction.ipynb       # Main Jupyter Notebook
-├── Training.csv                   # Dataset for training
-├── Testing.csv                    # Dataset for testing
-├── disease_prediction.py          # Script version of the model
-├── README.md                      # Project description
+```
 
-▶️ How to Run
-🧪 Using the Jupyter Notebook:
+## Interactive Demo
 
-jupyter notebook disease_prediction.ipynb
-Then follow the steps in the notebook to test predictions.
+For running an interactive demo or sharing it with others, please run `demo.py` using Jupyter Notebook or Jupyter Lab.
 
-⚙️ Using the Python Script:
+```
+jupyter notebook demo.ipynb
+```
 
-python disease_prediction.py
-You’ll be prompted to enter symptoms in the terminal.
+## Standalone Demo
 
-✅ Example Output
+For running the inference on test set or on custom inputs, you can also use the `infr.py` file as follows:
 
-Enter symptoms (comma-separated): headache, nausea, vomiting
+```
+python infer.py
+```
 
-Predicted Disease: Migraine
-📌 Notes
-Make sure symptoms match the dataset (e.g., use lowercase, exact spelling).
-
-The system is only for educational/demonstration purposes and not a replacement for professional medical advice.
-
+**NOTE:** ***This project is for demo purposes only. For any symptoms/disease, please refer to a Doctor.***
